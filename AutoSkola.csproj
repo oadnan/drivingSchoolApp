@@ -1,0 +1,567 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DA30CDA-ACA8-4014-B0B2-A3BF16C04026}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>AutoSkola</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AutoSkola</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DSetovi\dsDnevnikObuke.xsc">
+      <DependentUpon>dsDnevnikObuke.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsInstruktori.xsc">
+      <DependentUpon>dsInstruktori.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsInstruktori.xss">
+      <DependentUpon>dsInstruktori.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsInstruktori.xsx">
+      <DependentUpon>dsInstruktori.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsIzvDnevnik.xsc">
+      <DependentUpon>dsIzvDnevnik.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsIzvInstruktori.xsc">
+      <DependentUpon>dsIzvInstruktori.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsIzvKandidati.xsc">
+      <DependentUpon>dsIzvKandidati.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsIzvPolaganja.xsc">
+      <DependentUpon>dsIzvPolaganja.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsIzvVozila.xsc">
+      <DependentUpon>dsIzvVozila.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsKandidati.xsc">
+      <DependentUpon>dsKandidati.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsKategorije.xsc">
+      <DependentUpon>dsKategorije.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsKatIns.xsc">
+      <DependentUpon>dsKatIns.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsLogin.xsc">
+      <DependentUpon>dsLogin.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsLogin.xss">
+      <DependentUpon>dsLogin.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsPolaganja.xsc">
+      <DependentUpon>dsPolaganja.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsSifre.xsc">
+      <DependentUpon>dsSifre.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsSifre.xss">
+      <DependentUpon>dsSifre.xsd</DependentUpon>
+    </None>
+    <None Include="DSetovi\dsVozila.xsc">
+      <DependentUpon>dsVozila.xsd</DependentUpon>
+    </None>
+    <Content Include="App.ico" />
+    <Content Include="DSetovi\dsDnevnikObuke.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDnevnikObuke.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsInstruktori.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInstruktori.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsIzvDnevnik.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIzvDnevnik.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsIzvInstruktori.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIzvInstruktori.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsIzvKandidati.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIzvKandidati.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsIzvPolaganja.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIzvPolaganja.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsIzvVozila.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIzvVozila.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsKandidati.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsKandidati.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsKategorije.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsKategorije.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsKatIns.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsKatIns.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsLogin.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLogin.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsPolaganja.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPolaganja.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsSifre.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSifre.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DSetovi\dsVozila.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsVozila.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DSetovi\dsDnevnikObuke.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDnevnikObuke.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsInstruktori.cs">
+      <DependentUpon>dsInstruktori.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsInstruktori.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInstruktori.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsIzvDnevnik.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIzvDnevnik.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsIzvInstruktori.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIzvInstruktori.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsIzvKandidati.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIzvKandidati.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsIzvPolaganja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIzvPolaganja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsIzvVozila.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIzvVozila.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsKandidati.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsKandidati.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsKategorije.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsKategorije.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsKatIns.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsKatIns.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsLogin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLogin.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsPolaganja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPolaganja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsSifre.cs">
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSetovi\dsSifre.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSifre.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSetovi\dsVozila.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVozila.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmDnevnikObuke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDnevnikUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlavna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstruktori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstruktoriUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzvDnevnikObuke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzvInstruktori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzvjVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzvKandidati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzvPolaganja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKandidati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKandidatiUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKategorije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKategorijeUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPolaganja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPolaganjaUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSifre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSifreUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVozilaUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IVozila.cs">
+      <DependentUpon>IVozila.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="IzvDnevnikObuke.cs">
+      <DependentUpon>IzvDnevnikObuke.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="IzvInstruktori.cs">
+      <DependentUpon>IzvInstruktori.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="IzvKandidati.cs">
+      <DependentUpon>IzvKandidati.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="IzvPolaganja.cs">
+      <DependentUpon>IzvPolaganja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Klase\clsDnevnikObuke.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Klase\clsInstruktori.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Klase\clsKandidati.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Klase\clsKategorije.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Klase\clsKonekcija.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Klase\clsPolaganja.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Klase\clsProgram.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Klase\clsSifre.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Klase\clsVozila.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmDnevnikObuke.resx">
+      <DependentUpon>frmDnevnikObuke.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDnevnikUnos.resx">
+      <DependentUpon>frmDnevnikUnos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlavna.hr-HR.resx">
+      <DependentUpon>frmGlavna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlavna.hr.resx">
+      <DependentUpon>frmGlavna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlavna.resx">
+      <DependentUpon>frmGlavna.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstruktori.resx">
+      <DependentUpon>frmInstruktori.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstruktoriUnos.resx">
+      <DependentUpon>frmInstruktoriUnos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzvDnevnikObuke.resx">
+      <DependentUpon>frmIzvDnevnikObuke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzvInstruktori.resx">
+      <DependentUpon>frmIzvInstruktori.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzvjVozila.resx">
+      <DependentUpon>frmIzvjVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzvKandidati.resx">
+      <DependentUpon>frmIzvKandidati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzvPolaganja.resx">
+      <DependentUpon>frmIzvPolaganja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKandidati.resx">
+      <DependentUpon>frmKandidati.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKandidatiUnos.resx">
+      <DependentUpon>frmKandidatiUnos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKategorije.resx">
+      <DependentUpon>frmKategorije.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKategorijeUnos.resx">
+      <DependentUpon>frmKategorijeUnos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPolaganja.resx">
+      <DependentUpon>frmPolaganja.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPolaganjaUnos.resx">
+      <DependentUpon>frmPolaganjaUnos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSifre.resx">
+      <DependentUpon>frmSifre.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSifreUnos.resx">
+      <DependentUpon>frmSifreUnos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVozila.resx">
+      <DependentUpon>frmVozila.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVozilaUnos.resx">
+      <DependentUpon>frmVozilaUnos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IVozila.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVozila.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzvDnevnikObuke.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IzvDnevnikObuke.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzvInstruktori.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IzvInstruktori.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzvKandidati.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IzvKandidati.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzvPolaganja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IzvPolaganja.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
